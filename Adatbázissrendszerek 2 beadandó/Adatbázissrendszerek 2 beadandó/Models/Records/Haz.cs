@@ -73,11 +73,77 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Records
         }
         #endregion
 
+        #region Fűtés
 
-        // Fűtés pl padló
-        // Utca ház szám 
-        // Város
-        // Irányítószám
+        private string futes;
+
+        public string Futes
+        {
+            get
+            {
+                return futes;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Kérem adjon meg egy értéket a ház fűtésének.");
+                }
+                futes = value;
+            }
+        }
+
+        #endregion
+
+        #region Város
+
+        private string varos;
+
+        public string Varos
+        {
+            get
+            {
+                return varos;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Kérem adjon meg egy értéket a ház városának.");
+                }
+                 varos = value;
+            }
+        }
+
+        #endregion
+
+        #region Irányító szám
+
+        private string iszam;
+
+        public string Iszam
+        {
+            get
+            {
+                return iszam;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Kérem adjon meg egy értéket a ház irányítószámának.");
+                }
+                if (value.Length > 4)
+                {
+                    throw new Iszamnemmegfeleoformatum();
+                }
+                iszam = value;
+            }
+        }
+
+        #endregion
+
+
         // Típus Enum Kertes Társas
 
     }
