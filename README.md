@@ -1,0 +1,2 @@
+# Adatbazisrendszerek2-beadando
+ 
