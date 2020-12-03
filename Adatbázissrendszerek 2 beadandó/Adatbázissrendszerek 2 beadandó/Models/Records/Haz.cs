@@ -50,6 +50,29 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Records
         }
         #endregion
 
+        #region Emelet
+        private string emelet;
+        public string Emelet
+        {
+            get
+            {
+                return emelet;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Kérem adjon meg egy értéket a ház emeletének.");
+                }
+                if (value.Length > 3)
+                {
+                    throw new TulsokemeletException();
+                }
+                emelet = value;
+            }
+        }
+        #endregion
+
 
         // Fűtés pl padló
         // Utca ház szám 
