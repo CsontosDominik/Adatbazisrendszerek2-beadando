@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Adatbázissrendszerek_2_beadandó.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Records
 {
     class Haz
     {
-
+        #region Építése
         private string epitese;
         public string Epitese
         {
@@ -25,10 +26,31 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Records
                 epitese = value;
             }
         }
+        #endregion
 
-        // Építése pl tégla 
-        // Szobák száma pl 2
-        // Emelet pl 1
+        #region Szobákszáma
+        private string szobakszama;
+        public string Szobakszama
+        {
+            get
+            {
+                return szobakszama;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Kérem adja meg a szobák számát");
+                }
+                if (value.Length > 3)
+                {
+                    throw new TulsokszobaszamException();
+                }
+            }
+        }
+        #endregion
+
+
         // Fűtés pl padló
         // Utca ház szám 
         // Város
