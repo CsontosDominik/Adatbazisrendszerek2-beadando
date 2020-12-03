@@ -143,8 +143,25 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Records
 
         #endregion
 
+        #region Típus
+        private string tipus;
 
-        // Típus Enum Kertes Társas
+        public string Tipus
+        {
+            get
+            {
+                return tipus;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Kérem adjon meg egy értéket a ház típusának");
+                }
+                tipus = value;
+            }
+        }
+        #endregion
 
     }
 }
