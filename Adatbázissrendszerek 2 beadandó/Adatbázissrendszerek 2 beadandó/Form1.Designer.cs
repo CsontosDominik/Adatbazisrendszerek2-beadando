@@ -46,6 +46,8 @@
             this.btn_Beszuras = new System.Windows.Forms.Button();
             this.cb_tipus = new System.Windows.Forms.ComboBox();
             this.btn_Torles = new System.Windows.Forms.Button();
+            this.lb_utca = new System.Windows.Forms.Label();
+            this.tb_utca = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -198,7 +200,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(415, 315);
+            this.label8.Location = new System.Drawing.Point(9, 346);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 16);
             this.label8.TabIndex = 16;
@@ -208,9 +210,9 @@
             // btn_Beszuras
             // 
             this.btn_Beszuras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn_Beszuras.Location = new System.Drawing.Point(688, 312);
+            this.btn_Beszuras.Location = new System.Drawing.Point(418, 341);
             this.btn_Beszuras.Name = "btn_Beszuras";
-            this.btn_Beszuras.Size = new System.Drawing.Size(91, 23);
+            this.btn_Beszuras.Size = new System.Drawing.Size(160, 28);
             this.btn_Beszuras.TabIndex = 17;
             this.btn_Beszuras.Text = "Beszúrás";
             this.btn_Beszuras.UseVisualStyleBackColor = true;
@@ -219,7 +221,7 @@
             // cb_tipus
             // 
             this.cb_tipus.FormattingEnabled = true;
-            this.cb_tipus.Location = new System.Drawing.Point(487, 312);
+            this.cb_tipus.Location = new System.Drawing.Point(60, 341);
             this.cb_tipus.Name = "cb_tipus";
             this.cb_tipus.Size = new System.Drawing.Size(121, 21);
             this.cb_tipus.TabIndex = 18;
@@ -229,12 +231,33 @@
             // btn_Torles
             // 
             this.btn_Torles.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn_Torles.Location = new System.Drawing.Point(688, 358);
+            this.btn_Torles.Location = new System.Drawing.Point(614, 343);
             this.btn_Torles.Name = "btn_Torles";
-            this.btn_Torles.Size = new System.Drawing.Size(91, 23);
+            this.btn_Torles.Size = new System.Drawing.Size(174, 25);
             this.btn_Torles.TabIndex = 19;
             this.btn_Torles.Text = "Törlés";
             this.btn_Torles.UseVisualStyleBackColor = true;
+            // 
+            // lb_utca
+            // 
+            this.lb_utca.AutoSize = true;
+            this.lb_utca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lb_utca.Location = new System.Drawing.Point(187, 346);
+            this.lb_utca.Name = "lb_utca";
+            this.lb_utca.Size = new System.Drawing.Size(111, 16);
+            this.lb_utca.TabIndex = 21;
+            this.lb_utca.Text = "Utca. házszám";
+            this.lb_utca.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tb_utca
+            // 
+            this.tb_utca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tb_utca.Location = new System.Drawing.Point(304, 346);
+            this.tb_utca.Name = "tb_utca";
+            this.tb_utca.Size = new System.Drawing.Size(100, 22);
+            this.tb_utca.TabIndex = 20;
+            this.tb_utca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_utca.UseWaitCursor = true;
             // 
             // Form1
             // 
@@ -242,6 +265,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 395);
+            this.Controls.Add(this.lb_utca);
+            this.Controls.Add(this.tb_utca);
             this.Controls.Add(this.btn_Torles);
             this.Controls.Add(this.cb_tipus);
             this.Controls.Add(this.btn_Beszuras);
@@ -288,6 +313,8 @@
         private System.Windows.Forms.Button btn_Beszuras;
         private System.Windows.Forms.ComboBox cb_tipus;
         private System.Windows.Forms.Button btn_Torles;
+        private System.Windows.Forms.Label lb_utca;
+        private System.Windows.Forms.TextBox tb_utca;
     }
 }
 

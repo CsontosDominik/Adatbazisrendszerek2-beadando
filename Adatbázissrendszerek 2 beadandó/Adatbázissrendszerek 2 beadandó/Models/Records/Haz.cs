@@ -11,7 +11,7 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Records
     class Haz
     {
         #region Knstruktor
-        public Haz(TextBox epitese, TextBox szszam, TextBox emelet, TextBox futes, TextBox varos, TextBox iszam, ComboBox tipus)
+        public Haz(TextBox epitese, TextBox szszam, TextBox emelet, TextBox futes, TextBox varos, TextBox iszam, ComboBox tipus, TextBox hszam)
         {
             this.Epitese = (epitese.Text);
             this.Szobakszama = (szszam.Text);
@@ -20,6 +20,7 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Records
             this.Varos = (varos.Text);
             this.Iszam = (iszam.Text);
             this.Tipus = (tipus.Text);
+            this.Hszam = (hszam.Text);
         }
         #endregion
 
@@ -177,5 +178,23 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Records
         }
         #endregion
 
+        #region Utca házszám
+        private string hszam;
+        public string Hszam
+        {
+            get
+            {
+                return hszam;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Kérem adjon meg egy értéket a ház utcájának és számának.");
+                }
+                hszam = value;
+            }
+        }
+        #endregion
     }
 }
