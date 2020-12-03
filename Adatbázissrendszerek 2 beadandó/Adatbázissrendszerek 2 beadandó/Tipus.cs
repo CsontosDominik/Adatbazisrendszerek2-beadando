@@ -8,6 +8,6 @@ namespace Adatbázissrendszerek_2_beadandó
 {
     enum Tipus
     {
-        KERTESHÁZ, TÁRSASHÁZ, EMELETESHÁZ
+        Kertesház, Társasház, Emeletesház
     }
 }

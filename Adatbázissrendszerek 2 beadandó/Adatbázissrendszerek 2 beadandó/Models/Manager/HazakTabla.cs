@@ -10,6 +10,17 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Manager
 {
     class HazakTabla
     {
-       
+        OracleConnection GetOracleConnection()
+        {
+            OracleConnection oracleconnection = new OracleConnection();
+
+            string connectionString = @"Data Source=193.225.33.71;
+                                        User Id=qlidyo;
+                                        Password=EKE2020;";
+            oracleconnection.ConnectionString = connectionString;
+            return oracleconnection;
+        }
+
+
     }
 }
