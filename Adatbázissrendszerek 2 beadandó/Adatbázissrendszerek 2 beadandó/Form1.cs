@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Adatbázissrendszerek_2_beadandó.Models.Records;
 using Adatbázissrendszerek_2_beadandó.Models.Manager;
 
+
 namespace Adatbázissrendszerek_2_beadandó
 {
     public partial class haz_form : Form
@@ -17,6 +18,7 @@ namespace Adatbázissrendszerek_2_beadandó
         public haz_form()
         {
             InitializeComponent();
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -67,6 +69,14 @@ namespace Adatbázissrendszerek_2_beadandó
         private void hiba_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Torles_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void dataGridView1_Click(object sender, EventArgs e)
+        {
         }
     }
 }

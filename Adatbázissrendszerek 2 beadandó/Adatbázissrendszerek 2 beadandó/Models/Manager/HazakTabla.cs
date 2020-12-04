@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 using Adatbázissrendszerek_2_beadandó.Models.Records;
 using Oracle.ManagedDataAccess.Client;
 
+
 namespace Adatbázissrendszerek_2_beadandó.Models.Manager
 {
-    class Myexception : Exception
-    {
-       Exception myexeption = new Exception();
-    }
     class HazakTabla
     {
         OracleConnection GetOracleConnection()
@@ -98,7 +95,7 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Manager
                 affectedRows = command.ExecuteNonQuery();
                 oracletransaction.Commit();
             }
-            catch (Exception myexeption)
+            catch (Exception e)
             {
                 oracletransaction.Rollback();
             }

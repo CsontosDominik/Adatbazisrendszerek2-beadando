@@ -3,10 +3,10 @@ C:\Users\Dominik\Desktop\adatb bead\Adatbazisrendszerek2-beadando\Adatbázissren
 C:\Users\Dominik\Desktop\adatb bead\Adatbazisrendszerek2-beadando\Adatbázissrendszerek 2 beadandó\Adatbázissrendszerek 2 beadandó\bin\Debug\Adatbázissrendszerek 2 beadandó.pdb
 C:\Users\Dominik\Desktop\adatb bead\Adatbazisrendszerek2-beadando\Adatbázissrendszerek 2 beadandó\Adatbázissrendszerek 2 beadandó\bin\Debug\Oracle.ManagedDataAccess.dll
 C:\Users\Dominik\Desktop\adatb bead\Adatbazisrendszerek2-beadando\Adatbázissrendszerek 2 beadandó\Adatbázissrendszerek 2 beadandó\obj\Debug\Adatbázissrendszerek 2 beadandó.csprojAssemblyReference.cache
-C:\Users\Dominik\Desktop\adatb bead\Adatbazisrendszerek2-beadando\Adatbázissrendszerek 2 beadandó\Adatbázissrendszerek 2 beadandó\obj\Debug\Adatbázissrendszerek_2_beadandó.Form1.resources
 C:\Users\Dominik\Desktop\adatb bead\Adatbazisrendszerek2-beadando\Adatbázissrendszerek 2 beadandó\Adatbázissrendszerek 2 beadandó\obj\Debug\Adatbázissrendszerek_2_beadandó.Properties.Resources.resources
 C:\Users\Dominik\Desktop\adatb bead\Adatbazisrendszerek2-beadando\Adatbázissrendszerek 2 beadandó\Adatbázissrendszerek 2 beadandó\obj\Debug\Adatbázissrendszerek 2 beadandó.csproj.GenerateResource.cache
 C:\Users\Dominik\Desktop\adatb bead\Adatbazisrendszerek2-beadando\Adatbázissrendszerek 2 beadandó\Adatbázissrendszerek 2 beadandó\obj\Debug\Adatbázissrendszerek 2 beadandó.csproj.CoreCompileInputs.cache
 C:\Users\Dominik\Desktop\adatb bead\Adatbazisrendszerek2-beadando\Adatbázissrendszerek 2 beadandó\Adatbázissrendszerek 2 beadandó\obj\Debug\Adatbázissrendszerek 2 beadandó.csproj.CopyComplete
 C:\Users\Dominik\Desktop\adatb bead\Adatbazisrendszerek2-beadando\Adatbázissrendszerek 2 beadandó\Adatbázissrendszerek 2 beadandó\obj\Debug\Adatbázissrendszerek 2 beadandó.exe
 C:\Users\Dominik\Desktop\adatb bead\Adatbazisrendszerek2-beadando\Adatbázissrendszerek 2 beadandó\Adatbázissrendszerek 2 beadandó\obj\Debug\Adatbázissrendszerek 2 beadandó.pdb
+C:\Users\Dominik\Desktop\adatb bead\Adatbazisrendszerek2-beadando\Adatbázissrendszerek 2 beadandó\Adatbázissrendszerek 2 beadandó\obj\Debug\Adatbázissrendszerek_2_beadandó.haz_form.resources
