@@ -11,6 +11,7 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Manager
 {
     class HazakTabla
     {
+        
         OracleConnection GetOracleConnection()
         {
             OracleConnection oracleconnection = new OracleConnection();
@@ -52,7 +53,7 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Manager
             return records;
         }
 
-        public int Delete(Haz record)
+        public int Del(Haz record)
         {
             OracleConnection oracleconnection = GetOracleConnection();
             oracleconnection.Open();
@@ -104,6 +105,109 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Manager
             return affectedRows;
         }
 
+        public int Insert(Haz record)
+        {
+            OracleConnection oracleconnection = GetOracleConnection();
+            oracleconnection.Open();
+
+            OracleTransaction oracletransaction = oracleconnection.BeginTransaction(System.Data.IsolationLevel.ReadCommitted);
+
+            OracleCommand command = new OracleCommand()
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "spInsert_hazak"
+            };
+
+            OracleParameter epiteseParameter = new OracleParameter()
+            {
+                DbType = System.Data.DbType.String,
+                ParameterName = "p_epitese",
+                Direction = System.Data.ParameterDirection.Input,
+                Value = record.Epitese
+            };
+            command.Parameters.Add(epiteseParameter);
+
+            OracleParameter szobakszamaParameter = new OracleParameter()
+            {
+                DbType = System.Data.DbType.String,
+                ParameterName = "p_szobakszama",
+                Direction = System.Data.ParameterDirection.Input,
+                Value = record.Szobakszama
+            };
+            command.Parameters.Add(szobakszamaParameter);
+
+            OracleParameter emeletParameter = new OracleParameter()
+            {
+                DbType = System.Data.DbType.String,
+                ParameterName = "p_emelet",
+                Direction = System.Data.ParameterDirection.Input,
+                Value = record.Emelet
+            };
+            command.Parameters.Add(emeletParameter);
+
+            OracleParameter futesParameter = new OracleParameter()
+            {
+                DbType = System.Data.DbType.String,
+                ParameterName = "p_futes",
+                Direction = System.Data.ParameterDirection.Input,
+                Value = record.Futes
+            };
+            command.Parameters.Add(futesParameter);
+
+            OracleParameter varosParameter = new OracleParameter()
+            {
+                DbType = System.Data.DbType.String,
+                ParameterName = "p_varos",
+                Direction = System.Data.ParameterDirection.Input,
+                Value = record.Varos
+            };
+            command.Parameters.Add(varosParameter);
+
+            OracleParameter tipusParameter = new OracleParameter()
+            {
+                DbType = System.Data.DbType.String,
+                ParameterName = "p_tipus",
+                Direction = System.Data.ParameterDirection.Input,
+                Value = record.Tipus
+            };
+            command.Parameters.Add(tipusParameter);
+
+            OracleParameter hszamParameter = new OracleParameter()
+            {
+                DbType = System.Data.DbType.String,
+                ParameterName = "p_hszam",
+                Direction = System.Data.ParameterDirection.Input,
+                Value = record.Hszam
+            };
+            command.Parameters.Add(hszamParameter);
+
+            OracleParameter rowcountParameter = new OracleParameter()
+            {
+                DbType = System.Data.DbType.Int32,
+                ParameterName = "p_out_rowcnt",
+                Direction = System.Data.ParameterDirection.Output
+            };
+
+            command.Connection = oracleconnection;
+            command.Transaction = oracletransaction;
+
+            oracleconnection.Close();
+
+            try
+            {
+                command.ExecuteNonQuery();
+                int affectedRows = int.Parse(rowcountParameter.Value.ToString());
+                oracletransaction.Commit();
+                return affectedRows;
+            }
+            catch (Exception)
+            {
+                oracletransaction.Rollback();
+                return 0;
+            }
+
+
+        }
         public bool Checkiszam(string iszam)
         {
             OracleConnection oracleconnection = GetOracleConnection();

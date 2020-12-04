@@ -59,6 +59,7 @@ namespace Adatbázissrendszerek_2_beadandó
             tb_varos.Clear();
             tb_iszam.Clear();
             tb_utca.Clear();
+            
         }
 
         private void Form1_Activated(object sender, EventArgs e)
@@ -74,7 +75,6 @@ namespace Adatbázissrendszerek_2_beadandó
         private void btn_Torles_Click(object sender, EventArgs e)
         {
         }
-
         private void dataGridView1_Click(object sender, EventArgs e)
         {
         }
