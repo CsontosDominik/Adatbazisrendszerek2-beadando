@@ -1,6 +1,6 @@
 ﻿namespace Adatbázissrendszerek_2_beadandó
 {
-    partial class Form1
+    partial class haz_form
     {
         /// <summary>
         /// Required designer variable.
@@ -54,7 +54,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 26);
+            this.dataGridView1.Location = new System.Drawing.Point(2, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(776, 204);
             this.dataGridView1.TabIndex = 0;
@@ -259,7 +259,7 @@
             this.tb_utca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tb_utca.UseWaitCursor = true;
             // 
-            // Form1
+            // haz_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -285,8 +285,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_epitese);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form1";
+            this.Name = "haz_form";
             this.Text = "Form1";
+            this.Activated += new System.EventHandler(this.Form1_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

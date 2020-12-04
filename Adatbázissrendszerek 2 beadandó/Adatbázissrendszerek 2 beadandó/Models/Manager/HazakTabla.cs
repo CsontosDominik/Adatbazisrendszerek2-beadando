@@ -21,6 +21,75 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Manager
             return oracleconnection;
         }
 
+        public List<Haz> Select()
+        {
+            List<Haz> records = new List<Haz>();
 
+            OracleConnection oracleconnection = new OracleConnection();
+            oracleconnection.Open();
+
+            OracleCommand command = new OracleCommand()
+            {
+                CommandType = System.Data.CommandType.Text,
+                CommandText = "SELECT epitese, szobakszama, emelet, futes, varos, iszam, tipus, hszam FROM hazak"
+            };
+
+            command.Connection = oracleconnection;
+
+            OracleDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Haz haz = new Haz
+                {
+                    Szobakszama = reader["szobakszama"].ToString(),
+                    Emelet = reader["emelet"].ToString()
+                };
+                records.Add(haz);
+            }
+            oracleconnection.Close();
+
+            return records;
+        }
+
+        public bool Checkiszam(string iszam)
+        {
+            OracleConnection oracleconnection = GetOracleConnection();
+            oracleconnection.Open();
+
+            OracleCommand command = new OracleCommand()
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                CommandText = "sf_check_iszam"
+            };
+
+            OracleParameter correct = new OracleParameter()
+            {
+                DbType = System.Data.DbType.Int32,
+                Direction = System.Data.ParameterDirection.ReturnValue
+            };
+
+            OracleParameter iszamParameter = new OracleParameter()
+            {
+                DbType = System.Data.DbType.String,
+                ParameterName = "p_iszam",
+                Direction = System.Data.ParameterDirection.Input,
+                Value = iszam
+
+            };
+            command.Parameters.Add(iszamParameter);
+
+            command.Connection = oracleconnection;
+
+            try
+            {
+                int succesful = int.Parse(correct.Value.ToString());
+
+                return succesful != 0;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

@@ -12,9 +12,9 @@ using Adatbázissrendszerek_2_beadandó.Models.Manager;
 
 namespace Adatbázissrendszerek_2_beadandó
 {
-    public partial class Form1 : Form
+    public partial class haz_form : Form
     {
-        public Form1()
+        public haz_form()
         {
             InitializeComponent();
         }
@@ -47,8 +47,21 @@ namespace Adatbázissrendszerek_2_beadandó
                 tb_futes,
                 tb_varos,
                 tb_iszam,
-                cb_tipus
+                cb_tipus,
+                tb_utca
                 );
+            tb_epitese.Clear();
+            tb_szszam.Clear();
+            tb_emelet.Clear();
+            tb_futes.Clear();
+            tb_varos.Clear();
+            tb_iszam.Clear();
+            tb_utca.Clear();
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+
         }
     }
 }

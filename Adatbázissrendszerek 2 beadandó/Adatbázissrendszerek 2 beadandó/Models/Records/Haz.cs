@@ -10,7 +10,11 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Records
 {
     class Haz
     {
-        #region Knstruktor
+        #region Knstruktorok
+
+        public Haz()
+        {
+        }
         public Haz(TextBox epitese, TextBox szszam, TextBox emelet, TextBox futes, TextBox varos, TextBox iszam, ComboBox tipus, TextBox hszam)
         {
             this.Epitese = (epitese.Text);
