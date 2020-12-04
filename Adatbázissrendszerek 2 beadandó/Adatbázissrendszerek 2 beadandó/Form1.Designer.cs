@@ -48,11 +48,13 @@
             this.btn_Torles = new System.Windows.Forms.Button();
             this.lb_utca = new System.Windows.Forms.Label();
             this.tb_utca = new System.Windows.Forms.TextBox();
+            this.lb_hiba = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(2, 12);
             this.dataGridView1.Name = "dataGridView1";
@@ -210,7 +212,7 @@
             // btn_Beszuras
             // 
             this.btn_Beszuras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn_Beszuras.Location = new System.Drawing.Point(418, 341);
+            this.btn_Beszuras.Location = new System.Drawing.Point(427, 341);
             this.btn_Beszuras.Name = "btn_Beszuras";
             this.btn_Beszuras.Size = new System.Drawing.Size(160, 28);
             this.btn_Beszuras.TabIndex = 17;
@@ -259,12 +261,25 @@
             this.tb_utca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tb_utca.UseWaitCursor = true;
             // 
+            // lb_hiba
+            // 
+            this.lb_hiba.AutoSize = true;
+            this.lb_hiba.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lb_hiba.ForeColor = System.Drawing.Color.Red;
+            this.lb_hiba.Location = new System.Drawing.Point(473, 309);
+            this.lb_hiba.Name = "lb_hiba";
+            this.lb_hiba.Size = new System.Drawing.Size(114, 20);
+            this.lb_hiba.TabIndex = 22;
+            this.lb_hiba.Text = "Hibaüzenet helye";
+            this.lb_hiba.Click += new System.EventHandler(this.hiba_Click);
+            // 
             // haz_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 395);
+            this.Controls.Add(this.lb_hiba);
             this.Controls.Add(this.lb_utca);
             this.Controls.Add(this.tb_utca);
             this.Controls.Add(this.btn_Torles);
@@ -316,6 +331,7 @@
         private System.Windows.Forms.Button btn_Torles;
         private System.Windows.Forms.Label lb_utca;
         private System.Windows.Forms.TextBox tb_utca;
+        private System.Windows.Forms.Label lb_hiba;
     }
 }
 

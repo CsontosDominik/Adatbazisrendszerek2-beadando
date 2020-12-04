@@ -63,5 +63,10 @@ namespace Adatbázissrendszerek_2_beadandó
         {
 
         }
+
+        private void hiba_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

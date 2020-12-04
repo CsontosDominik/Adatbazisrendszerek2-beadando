@@ -8,6 +8,10 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace Adatbázissrendszerek_2_beadandó.Models.Manager
 {
+    class Myexception : Exception
+    {
+       Exception myexeption = new Exception();
+    }
     class HazakTabla
     {
         OracleConnection GetOracleConnection()
@@ -49,6 +53,58 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Manager
             oracleconnection.Close();
 
             return records;
+        }
+
+        public int Delete(Haz record)
+        {
+            OracleConnection oracleconnection = GetOracleConnection();
+            oracleconnection.Open();
+
+            OracleTransaction oracletransaction = oracleconnection.BeginTransaction(System.Data.IsolationLevel.ReadCommitted);
+
+            OracleCommand command = new OracleCommand()
+            {
+                CommandType = System.Data.CommandType.Text,
+                CommandText = "DELETE FROM hazak WHERE varos = :varos AND hszam = :hszam"
+            };
+
+            OracleParameter varosParameter = new OracleParameter()
+            {
+                DbType = System.Data.DbType.String,
+                ParameterName = ":varos",
+                Direction = System.Data.ParameterDirection.Input,
+                Value = record.Varos
+            };
+            command.Parameters.Add(varosParameter);
+
+            command.Connection = oracleconnection;
+            command.Transaction = oracletransaction;
+
+            OracleParameter hszamParameter = new OracleParameter()
+            {
+                DbType = System.Data.DbType.String,
+                ParameterName = ":hszam",
+                Direction = System.Data.ParameterDirection.Input,
+                Value = record.Hszam
+            };
+            command.Parameters.Add(hszamParameter);
+
+            command.Connection = oracleconnection;
+            command.Transaction = oracletransaction;
+
+            int affectedRows = 0;
+            try
+            {
+                affectedRows = command.ExecuteNonQuery();
+                oracletransaction.Commit();
+            }
+            catch (Exception myexeption)
+            {
+                oracletransaction.Rollback();
+            }
+            oracleconnection.Close();
+
+            return affectedRows;
         }
 
         public bool Checkiszam(string iszam)
