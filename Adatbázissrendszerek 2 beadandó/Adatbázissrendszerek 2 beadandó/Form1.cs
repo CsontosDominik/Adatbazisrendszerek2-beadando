@@ -21,26 +21,20 @@ namespace Adatbázissrendszerek_2_beadandó
         public haz_form()
         {
             InitializeComponent();
-
-            //Haz haz1 = new Haz();
-            //haz1()
-            //for (int i = 0; i < 8; i++)
-            //{
-            //   dt.Columns.Add(new DataColumn { DataType = Type.GetType("System.String") });
-            //}
-
         }
-
+        
+        #region
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
-
         private void cb_tipus_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+        #endregion
 
+        #region Típusok
         private void cb_tipus_DropDown(object sender, EventArgs e)
         {
             cb_tipus.Items.Clear();
@@ -49,7 +43,9 @@ namespace Adatbázissrendszerek_2_beadandó
             cb_tipus.Items.Add(Tipus.Társasház);
 
         }
+        #endregion
 
+        #region Beszúrás
         private void btn_Beszuras_Click(object sender, EventArgs e)
         {
             try
@@ -79,7 +75,6 @@ namespace Adatbázissrendszerek_2_beadandó
                 temp = ht.Select();
                 for (int i = 0; i < temp.Count; i++)
                 {
-                    //tudom hogy lehetne egy funkció de NEM LESZ
                     dataGridView1.Rows[i].Cells[0].Value = temp[i].Epitese;
                     dataGridView1.Rows[i].Cells[1].Value = temp[i].Szobakszama;
                     dataGridView1.Rows[i].Cells[2].Value = temp[i].Emelet;
@@ -102,15 +97,10 @@ namespace Adatbázissrendszerek_2_beadandó
                 MessageBox.Show(exe.Message);   
             }
         }
-        private void Form1_Activated(object sender, EventArgs e)
-        {
 
-        }
-        private void hiba_Click(object sender, EventArgs e)
-        {
+        #endregion
 
-        }
-
+        #region Törlés
         private void btn_Torles_Click(object sender, EventArgs e)
         {
             int help = dataGridView1.CurrentCell.RowIndex;
@@ -137,6 +127,17 @@ namespace Adatbázissrendszerek_2_beadandó
                 dataGridView1.Rows[i].Cells[7].Value = temp[i].Hszam;
             }
         }
+        #endregion
+
+        #region 
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+
+        }
+        private void hiba_Click(object sender, EventArgs e)
+        {
+
+        }
         private void dataGridView1_Click(object sender, EventArgs e)
         {
         }
@@ -144,5 +145,6 @@ namespace Adatbázissrendszerek_2_beadandó
         {
 
         }
+        #endregion
     }
 }

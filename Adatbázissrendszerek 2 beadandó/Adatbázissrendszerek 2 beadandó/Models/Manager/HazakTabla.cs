@@ -11,7 +11,7 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Manager
 {
     class HazakTabla
     {
-        
+        #region Connection
         OracleConnection GetOracleConnection()
         {
             OracleConnection oracleconnection = new OracleConnection();
@@ -22,7 +22,9 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Manager
             oracleconnection.ConnectionString = connectionString;
             return oracleconnection;
         }
+        #endregion
 
+        #region Select
         public List<Haz> Select()
         {
             List<Haz> records = new List<Haz>();
@@ -52,7 +54,9 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Manager
 
             return records;
         }
+        #endregion
 
+        #region Delete
         public int Del(Haz record)
         {
             OracleConnection oracleconnection = GetOracleConnection();
@@ -104,7 +108,9 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Manager
 
             return affectedRows;
         }
+        #endregion
 
+        #region Insert
         public int Insert(Haz record)
         {
             OracleConnection oracleconnection = GetOracleConnection();
@@ -208,6 +214,9 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Manager
 
 
         }
+        #endregion
+
+        #region Checkiszam
         public bool Checkiszam(string iszam)
         {
             OracleConnection oracleconnection = GetOracleConnection();
@@ -248,5 +257,6 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Manager
                 return false;
             }
         }
+        #endregion
     }
 }
