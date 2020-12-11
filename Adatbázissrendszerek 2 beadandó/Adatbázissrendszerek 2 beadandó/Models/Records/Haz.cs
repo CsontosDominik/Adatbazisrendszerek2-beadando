@@ -15,6 +15,17 @@ namespace Adatbázissrendszerek_2_beadandó.Models.Records
         public Haz()
         {
         }
+        public Haz(string epitese, string szszam, string emelet, string futes, string varos, string iszam, string tipus, string hszam)
+        {
+            this.Epitese = (epitese);
+            this.Szobakszama = (szszam);
+            this.Emelet = (emelet);
+            this.Futes = (futes);
+            this.Varos = (varos);
+            this.Iszam = (iszam);
+            this.Tipus = (tipus);
+            this.Hszam = (hszam);
+        }
         public Haz(TextBox epitese, TextBox szszam, TextBox emelet, TextBox futes, TextBox varos, TextBox iszam, ComboBox tipus, TextBox hszam)
         {
             this.Epitese = (epitese.Text);

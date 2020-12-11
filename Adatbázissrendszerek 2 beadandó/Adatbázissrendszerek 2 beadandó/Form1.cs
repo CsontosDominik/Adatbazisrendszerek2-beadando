@@ -79,6 +79,7 @@ namespace Adatbázissrendszerek_2_beadandó
                 temp = ht.Select();
                 for (int i = 0; i < temp.Count; i++)
                 {
+                    //tudom hogy lehetne egy funkció de NEM LESZ
                     dataGridView1.Rows[i].Cells[0].Value = temp[i].Epitese;
                     dataGridView1.Rows[i].Cells[1].Value = temp[i].Szobakszama;
                     dataGridView1.Rows[i].Cells[2].Value = temp[i].Emelet;
@@ -96,10 +97,9 @@ namespace Adatbázissrendszerek_2_beadandó
                 tb_iszam.Clear();
                 tb_utca.Clear();
             }
-            catch (Exception)
+            catch (Exception exe)
             {
-
-                throw;
+                MessageBox.Show(exe.Message);   
             }
         }
         private void Form1_Activated(object sender, EventArgs e)
@@ -113,7 +113,29 @@ namespace Adatbázissrendszerek_2_beadandó
 
         private void btn_Torles_Click(object sender, EventArgs e)
         {
-           //ht.Del()
+            int help = dataGridView1.CurrentCell.RowIndex;
+            Haz torlendo = new Haz(dataGridView1.Rows[help].Cells[0].Value.ToString(),
+                                   dataGridView1.Rows[help].Cells[1].Value.ToString(),
+                                   dataGridView1.Rows[help].Cells[2].Value.ToString(),
+                                   dataGridView1.Rows[help].Cells[3].Value.ToString(),
+                                   dataGridView1.Rows[help].Cells[4].Value.ToString(),
+                                   dataGridView1.Rows[help].Cells[5].Value.ToString(),
+                                   dataGridView1.Rows[help].Cells[6].Value.ToString(),
+                                   dataGridView1.Rows[help].Cells[7].Value.ToString());
+            ht.Del(torlendo);
+            temp.Clear();
+            temp = ht.Select();
+            for (int i = 0; i < temp.Count; i++)
+            {
+                dataGridView1.Rows[i].Cells[0].Value = temp[i].Epitese;
+                dataGridView1.Rows[i].Cells[1].Value = temp[i].Szobakszama;
+                dataGridView1.Rows[i].Cells[2].Value = temp[i].Emelet;
+                dataGridView1.Rows[i].Cells[3].Value = temp[i].Futes;
+                dataGridView1.Rows[i].Cells[4].Value = temp[i].Varos;
+                dataGridView1.Rows[i].Cells[5].Value = temp[i].Iszam;
+                dataGridView1.Rows[i].Cells[6].Value = temp[i].Tipus;
+                dataGridView1.Rows[i].Cells[7].Value = temp[i].Hszam;
+            }
         }
         private void dataGridView1_Click(object sender, EventArgs e)
         {
